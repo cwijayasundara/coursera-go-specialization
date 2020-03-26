@@ -6,7 +6,7 @@ import (
 )
 
 func foo(wg *sync.WaitGroup) {
-	fmt.Printf("New routine")
+	fmt.Println("sub routine")
 	wg.Done()
 }
 func main() {
@@ -14,5 +14,5 @@ func main() {
 	wg.Add(1)
 	go foo(&wg)
 	wg.Wait()
-	fmt.Printf("Main routine")
+	fmt.Println("Main routine")
 }
